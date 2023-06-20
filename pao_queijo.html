@@ -77,7 +77,8 @@
      <br> 
    
     
-    <a href="carrinho.html"><button class="comprar"> COMPRAR </button></a>
+     <button onclick="comprar(9)" class="comprar"> COMPRAR </button>
+    
    
     <script>
       function Adicionar()
@@ -96,7 +97,11 @@
 
       }
 
-      
+      function comprar(Id_produtos)
+      {
+        quantidade = numero.value
+        window.open("comprar.php?Id_produtos="+Id_produtos+"&quantidade="+quantidade,"_self")
+      }
 
   </script>
 
