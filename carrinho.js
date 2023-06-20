@@ -1,7 +1,6 @@
-function Fechar(meuid)
+function Fechar(Id)
 {
-    meu_id = document.getElementById (meuid)
-    meu_id.style.display = "none";
+    window.open("excluircarrinho.php?id=" +Id, "_self");
 }
 
 function adicionar() {

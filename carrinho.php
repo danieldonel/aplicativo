@@ -72,7 +72,7 @@ $resultado = $comando->execute();
             
             while ( $linhas = $comando->fetch() )
             {
-                $Id_produto = $linhas ["Id_produtos"];
+                $Id_produto = $linhas ["id_produto"];
                 $Nome = $linhas ["nome"];
                 $imagem = $linhas ["imagem"];
                 $imagem=base64_encode($imagem);
@@ -93,7 +93,7 @@ $resultado = $comando->execute();
             <div class=\"ult\">
 
                  <div class=\"preencher\">
-                    <img onclick=\"Fechar('tudo');\" class=\"fechar\" src='' width=\"30px\">
+                    <img onclick=\"Fechar($Id_produto);\" class=\"fechar\" src='img/x.png' width=\"25px\">
                  </div>
 
                  <div class=\"quantidade\">
