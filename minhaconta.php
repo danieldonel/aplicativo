@@ -38,17 +38,16 @@
 
     <div class="div3">
      <?php
-         session_start();
+        session_start();
         include ("conecta.php");
         $logado = $_SESSION["logado"];
         $letra = substr($logado, 0, 1);
         echo($letra);
- 
+
         $comando = $pdo->prepare("SELECT * FROM cadastro where Email='$logado'");
         $resultado = $comando->execute();
-            
+        
         while( $linhas = $comando->fetch()){
-                  
         $email = $_POST["Email"];
         $senha      = $_POST["Senha"];
         $nome    = $_POST["Nome"];
@@ -64,9 +63,11 @@
       ?>
           <div class="email">
           <?php
-          echo("$logado");
+            echo("$logado");
           ?>
       </div>
+
+     
     </div>
 </body>
 </html>

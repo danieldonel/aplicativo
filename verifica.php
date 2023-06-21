@@ -25,7 +25,9 @@
     {
         if($admin == "s")
         {
-            header ("Location: pagcadastro_adm.html");
+            $_SESSION["logado"] = $login;
+            header("Location: pagcadastro_adm.html");
+
         }
 
         else
