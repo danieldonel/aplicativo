@@ -30,7 +30,8 @@
 
         else
         {
-            header ("Location: principal.html");
+            $_SESSION["logado"] = $login;
+            header("Location: principal.html");
         }
     }
 

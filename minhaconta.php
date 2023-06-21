@@ -35,6 +35,38 @@
             <img src="img/titulo1.png" width="180px" class="titulo">
         </div>
     </div>
-    <div class="div3"></div>
+
+    <div class="div3">
+     <?php
+         session_start();
+        include ("conecta.php");
+        $logado = $_SESSION["logado"];
+        $letra = substr($logado, 0, 1);
+        echo($letra);
+ 
+        $comando = $pdo->prepare("SELECT * FROM cadastro where Email='$logado'");
+        $resultado = $comando->execute();
+            
+        while( $linhas = $comando->fetch()){
+                  
+        $email = $_POST["Email"];
+        $senha      = $_POST["Senha"];
+        $nome    = $_POST["Nome"];
+        $telefone    = $_POST["Telefone"];
+        $data    = $_POST["Data"];
+        $cep     = $_POST["Cep"];
+        $rua     = $_POST["Rua"];
+        $bairro     = $_POST["Bairro"];
+        $numero    = $_POST["Numero"];
+        $estado   = $_POST["Estado"];
+        $complemento    = $_POST["Complemento"];
+      }        
+      ?>
+          <div class="email">
+          <?php
+          echo("$logado");
+          ?>
+      </div>
+    </div>
 </body>
 </html>
