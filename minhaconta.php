@@ -1,3 +1,6 @@
+<?php 
+ session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,34 +41,56 @@
 
     <div class="div3">
      <?php
-        session_start();
+
         include ("conecta.php");
         $logado = $_SESSION["logado"];
-        $letra = substr($logado, 0, 1);
-        echo($letra);
+        $admin = $_SESSION["admin"];
+        if( $admin == "s")
+        {
+          $comando = $pdo->prepare("SELECT * FROM cadastro ");
+        }
 
-        $comando = $pdo->prepare("SELECT * FROM cadastro where Email='$logado'");
+        else
+        {
+          $comando = $pdo->prepare("SELECT * FROM cadastro where Email = '$logado'");
+
+        }
+
+       
         $resultado = $comando->execute();
         
         while( $linhas = $comando->fetch()){
-        $email = $_POST["Email"];
-        $senha      = $_POST["Senha"];
-        $nome    = $_POST["Nome"];
-        $telefone    = $_POST["Telefone"];
-        $data    = $_POST["Data"];
-        $cep     = $_POST["Cep"];
-        $rua     = $_POST["Rua"];
-        $bairro     = $_POST["Bairro"];
-        $numero    = $_POST["Numero"];
-        $estado   = $_POST["Estado"];
-        $complemento    = $_POST["Complemento"];
+        $email = $linhas["Email"];
+        $senha      = $linhas["Senha"];
+        $nome    = $linhas["Nome"];
+        $telefone    = $linhas["Telefone"];
+        $data    = $linhas["Data"];
+        $cep     = $linhas["Cep"];
+        $rua     =$linhas["Rua"];
+        $bairro     = $linhas["Bairro"];
+        $numero    = $linhas["Numero"];
+        $estado   = $linhas["Estado"];
+        $complemento    = $linhas["Complemento"];
+
+        echo("
+
+
+
+        <div class='email'>
+          $email
+          <br>
+          $senha
+        </div>
+        <br>
+
+
+
+        
+        ");
       }        
       ?>
-          <div class="email">
-          <?php
-            echo("$logado");
-          ?>
-      </div>
+          
+  
 
      
     </div>

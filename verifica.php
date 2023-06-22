@@ -1,4 +1,5 @@
 <?php
+session_start();
 
   $email = $_POST ["email"]; //pega o input
   $senha = $_POST ["senha"];
@@ -25,14 +26,17 @@
     {
         if($admin == "s")
         {
-            $_SESSION["logado"] = $login;
-            header("Location: pagcadastro_adm.html");
+            $_SESSION["logado"] = $email;
+            $_SESSION["admin"] = "s";
+            header("Location:  principal.html");
+            
 
         }
 
         else
         {
-            $_SESSION["logado"] = $login;
+            $_SESSION["logado"] = $email;
+            $_SESSION["admin"] = "n";
             header("Location: principal.html");
         }
     }
