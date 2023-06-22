@@ -20,11 +20,12 @@ body
     {
         margin-top: 70px;
         margin-left: 20px;
-        width: 320px;
-        height: 300px;
-        background-color: aquamarine;
+        border-radius: 10px;
+        width: 330px;
+        background-color: #e4cece;
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
         
     }
     .barra
@@ -61,17 +62,23 @@ body
 
     /*div para aparecer a listagem do perfil*/
 
-    .email
+    .dados1
     {
-        width: 290px;
-        z-index: 2;
         font-size: 25px;
-        color: rgb(0, 0, 0);
+        color: #7D0000;
+    }
+
+    .dados
+    {
+        width: 300px;
+        font-size: 20px;
+        color: white;
         display: flex;
         align-items: center;
-        padding-left: 20px;
-        background-color: rgba(44, 119, 119, 0.895);
+        padding-left: 23px;
+        background-color: #7D0000;
         border-radius:5px ;
+       
     }
 
     

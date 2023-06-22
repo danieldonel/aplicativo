@@ -28,7 +28,7 @@ session_start();
         {
             $_SESSION["logado"] = $email;
             $_SESSION["admin"] = "s";
-            header("Location:  principal.html");
+            header("Location:  pgadmin.php");
             
 
         }

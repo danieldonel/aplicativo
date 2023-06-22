@@ -88,6 +88,7 @@ body
         margin-left: 70px;
         width: 100px;
         height: 5vh;
+        border-radius: 10px;
         font-size: 13.5px;
         background-color: #7D0000;
         cursor: pointer;

@@ -22,11 +22,10 @@
             <span id="hamburger"></span>
           </button>
           <ul id="menu" role="menu">
-            <li><a href="minhaconta.php">Minha Conta</a></li>
-            <li><a href="principal.html">Produtos</a></li>
-            <li><a href="sobrenos.html">Sobre nós</a></li>
-            <li><a href="carrinho.html">Carrinho</a></li>
-            <li><a href="fale_conosco.html">Fale conosco</a></li>
+            <li><a href="pgadmin.php">Cadastros</a></li>
+            <li><a href="/">Cadastrar produtos</a></li>
+            <li><a href="/">Pedidos</a></li>
+            <li><a href="/">Atendimento</a></li>
           </ul>
         </nav>
       </header>
@@ -52,13 +51,6 @@
           $comando = $pdo->prepare("SELECT * FROM cadastro ");
         }
 
-        else
-        {
-          $comando = $pdo->prepare("SELECT * FROM cadastro where Email = '$logado'");
-
-        }
-
-       
         $resultado = $comando->execute();
         
         while( $linhas = $comando->fetch()){
